@@ -1,23 +1,22 @@
 <?php
 
-$dsn = 'mysql:dbname=projet.php;host:127.0.0.1';
-$user = 'root';
-$password = '';
-try {
-    $dbh = new PDO($dsn, $user, $password);
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+require'connect.php'
 if (!empty($_POST)) {
+    
+    
+    $hashed_password = crypt($_POST['password'],'_J9..rasm');
+  
+    
     $stmt = $dbh->prepare('
                 INSERT INTO users(pseudo, email, password) 
                 VALUES (:pseudo, :email, :password);');
     $stmt->execute([
         ':pseudo' => $_POST['name'],
         ':email' => $_POST['email'],
-        ':password' => $_POST['password']
+        ':password' => $hashed_password
     ]);
 }
+
 ?>
 
 <!doctype html>
@@ -35,6 +34,7 @@ if (!empty($_POST)) {
             <input type="text" name="email" id="">
             <input type="text" name="password" id="">
             <button type="submit">Enregistrer</button>
+            
         </form>
     </body>
 </html>
