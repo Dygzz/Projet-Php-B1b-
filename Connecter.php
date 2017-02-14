@@ -2,7 +2,7 @@
 
 session_start();
 
-if (empty($_SESSION['connected'])) {
+if (!$_SESSION['connected']) {
     header('Location:Utilisateur.php');
 }
 

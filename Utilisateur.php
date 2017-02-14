@@ -1,24 +1,35 @@
 <?php
 session_start();
-require 'ConnectionBaseDonnes.php';
+//require 'connect.php';
+$dsn = 'mysql:dbname=projet_phpp;host:127.0.0.1';
+$user = 'root';
+$password = '';
+try {
+    $dbh = new PDO($dsn, $user, $password);
+} catch (Exception $e){
+    echo $e->getMessage();
+}
 
 if(!empty($_POST['password']) && !empty($_POST['email'])){
+    $psw = crypt($_POST['password'], '_J9..rasm');
+
     $stmt = $dbh->prepare('SELECT id
                        FROM users
                        WHERE Email = :email 
                        AND Password = :password'
     );
     $stmt->execute([
-        ':email' => $_POST['Email'],
-        ':password' => $_POST['Password']
+        ':email' => $_POST['email'],
+        ':password' => $psw
     ]);
-    $result = $stmt->fetchAll()[0]();
+    $result = $stmt->fetchall();
 
     if (count($result) > 0) {
         $_SESSION['connected'] = true;
         $_SESSION['id']= $result['id'];
-        header('Location: ./Connecte.php');
-    } elseif (count($result) == 0) {
+        header('Location: ./Connecter.php');
+    }
+    elseif (count($result) == 0) {
         echo 'l\'email ou le mot de passe sont faux';
     }
 }
