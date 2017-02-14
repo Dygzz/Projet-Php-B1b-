@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'ConnectionBaseDonnées.php';
+require 'ConnectionBaseDonnes.php';
 
 if(!empty($_POST['password']) && !empty($_POST['email'])){
     $stmt = $dbh->prepare('SELECT id
@@ -17,7 +17,7 @@ if(!empty($_POST['password']) && !empty($_POST['email'])){
     if (count($result) > 0) {
         $_SESSION['connected'] = true;
         $_SESSION['id']= $result['id'];
-        header('Location: ./Connecté.php');
+        header('Location: ./Connecte.php');
     } elseif (count($result) == 0) {
         echo 'l\'email ou le mot de passe sont faux';
     }
