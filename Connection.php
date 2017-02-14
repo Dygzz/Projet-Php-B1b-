@@ -1,14 +1,7 @@
 <?php
 session_start();
-//require 'connect.php';
-$dsn = 'mysql:dbname=projet_phpp;host:127.0.0.1';
-$user = 'root';
-$password = '';
-try {
-    $dbh = new PDO($dsn, $user, $password);
-} catch (Exception $e){
-    echo $e->getMessage();
-}
+require 'connect.php';
+
 
 if(!empty($_POST['password']) && !empty($_POST['email'])){
     $psw = crypt($_POST['password'], '_J9..rasm');

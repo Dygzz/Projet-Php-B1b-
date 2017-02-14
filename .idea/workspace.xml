@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a68ceebe-7527-4e93-9546-071f8f25deaf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ConnectionBaseDonnes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Utilisateur.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Utilisateur.php" afterPath="$PROJECT_DIR$/Utilisateur.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Connect.php" afterPath="$PROJECT_DIR$/Connecter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Connecter.php" afterPath="$PROJECT_DIR$/Connecter.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,19 +19,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Utilisateur.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Utilisateur.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="770">
-              <caret line="35" column="2" lean-forward="true" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
-              <folding>
-                <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connecter.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Connecter.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Connecter.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
@@ -53,8 +39,8 @@
       <list>
         <option value="$PROJECT_DIR$/ConnectionBaseDonnées.php" />
         <option value="$PROJECT_DIR$/Connecté.php" />
-        <option value="$PROJECT_DIR$/Connecter.php" />
         <option value="$PROJECT_DIR$/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/Connecter.php" />
       </list>
     </option>
   </component>
@@ -186,12 +172,14 @@
       <workItem from="1487066536327" duration="3799000" />
       <workItem from="1487076220253" duration="1174000" />
       <workItem from="1487078168723" duration="3744000" />
-      <workItem from="1487084211720" duration="1883000" />
+      <workItem from="1487084211720" duration="2655000" />
+      <workItem from="1487087788804" duration="9000" />
+      <workItem from="1487087869222" duration="20000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16059000" />
+    <option name="totallyTimeSpent" value="16860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="123" y="0" width="1671" height="1038" extended-state="1" />
@@ -229,14 +217,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Utilisateur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-          </folding>
+        <state relative-caret-position="352">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Connecter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
+    <entry file="file://$PROJECT_DIR$/Connecter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
     <entry file="file://$PROJECT_DIR$/Connecter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -245,91 +249,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
     <entry file="file://$PROJECT_DIR$/ConnectionBaseDonnées.php" />
     <entry file="file://$PROJECT_DIR$/Connecté.php" />
-    <entry file="file://$PROJECT_DIR$/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
     <entry file="file://$PROJECT_DIR$/ConnectionBaseDonnées.php" />
     <entry file="file://$PROJECT_DIR$/Connecté.php" />
-    <entry file="file://$PROJECT_DIR$/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
     <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
     <entry file="file://$PROJECT_DIR$/ConnectionBaseDonnées.php" />
     <entry file="file://$PROJECT_DIR$/Connecté.php" />
     <entry file="file://$PROJECT_DIR$/ConnectionBaseDonnées.php" />
-    <entry file="file://$PROJECT_DIR$/Connect.php" />
+    <entry file="file://$PROJECT_DIR$/connect.php" />
     <entry file="file://$PROJECT_DIR$/ConnectionBaseDonnes.php" />
+    <entry file="file://$PROJECT_DIR$/Utilisateur.php" />
     <entry file="file://$PROJECT_DIR$/Connecter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="35" column="2" lean-forward="true" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
-          <folding>
-            <marker date="1487086094887" expanded="true" signature="372:508" ph="SELECT id FR... users" />
-          </folding>
         </state>
       </provider>
     </entry>

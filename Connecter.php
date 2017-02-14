@@ -3,7 +3,7 @@
 session_start();
 
 if (!$_SESSION['connected']) {
-    header('Location:Utilisateur.php');
+    header('Location:Connection.php');
 }
 
 echo 'coucou';
