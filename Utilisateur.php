@@ -17,9 +17,15 @@ if(!empty($_POST['password']) && !empty($_POST['email'])){
     if (count($result) > 0) {
         $_SESSION['connected'] = true;
         $_SESSION['id']= $result['id'];
-        header('Location: ./');
+        header('Location: ./Connecté.php');
     } elseif (count($result) == 0) {
         echo 'l\'email ou le mot de passe sont faux';
     }
 }
+?>
 
+<form action="" method="post">
+    <input type="text" name="email" id="">
+    <input type="password" name="password" id="">
+    <button type="submit">Valider</button>
+</form>
