@@ -1,0 +1,6 @@
+body{
+    
+    background-image: url(../ImagesHtml/testimg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}

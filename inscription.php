@@ -1,6 +1,7 @@
 <?php
 
-require'connect.php'
+require'connect.php';
+
 if (!empty($_POST)) {
     
     
