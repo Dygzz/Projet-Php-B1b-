@@ -1,5 +1,5 @@
 <?php
-session_start();
+//
 require 'connect.php';
 
 
@@ -17,10 +17,13 @@ if(!empty($_POST['password']) && !empty($_POST['email'])){
     ]);
     $result = $stmt->fetchall();
 
+
+
+
     if (count($result) > 0) {
         $_SESSION['connected'] = true;
-        $_SESSION['id']= $result['id'];
-        header('Location: ./Connecter.php');
+        $_SESSION['id']= $result[0]['id'];
+        header('Location: ./Profil.php');
     }
     elseif (count($result) == 0) {
         echo 'l\'email ou le mot de passe sont faux';
