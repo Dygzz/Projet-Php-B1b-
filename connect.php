@@ -8,7 +8,7 @@ session_start();
 
  $dsn = 'mysql:dbname=projet_php;host:127.0.0.1';
  $user = 'root';
- $password = 'root';
+ $password = '';
  
  try {
      $dbh = new PDO($dsn, $user, $password);
