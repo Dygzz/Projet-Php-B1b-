@@ -2,8 +2,19 @@
 
 require 'connect.php';
 
-ini_set('display_errors', 1);
-ini_set('error_reporting', E_ALL);
+$stmt = $dbh->prepare('SELECT NAME 
+                       FROM pictures
+                       ORDER  by id DESC LIMIT 0, 5  
+                       '
+);
+$stmt->execute();
+$lastPicture = $stmt->fetchall();
+
+for ($i = 0; $i < count($lastPicture); $i ++) {
+    print_r($lastPicture[$i][0]) ;
+
+   echo '<img src="Images/' .$lastPicture[$i][0] .'">';
+}
 
 
 
