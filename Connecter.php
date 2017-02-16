@@ -1,11 +1,18 @@
 <?php
 
-
-
 require 'connect.php';
 
-if (!$_SESSION['connected']) {
-    header('Location:Connection.php');
+$stmt = $dbh->prepare('SELECT NAME 
+                       FROM pictures
+                       ORDER  by id DESC LIMIT 0, 5  
+                       '
+);
+$stmt->execute();
+$lastPicture = $stmt->fetchall();
+
+for ($i = 0; $i < count($lastPicture); $i ++) {
+
+    echo '<img src="Images/' .$lastPicture[$i][0] .'">';
 }
 
 $pixName = '';
@@ -28,6 +35,7 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
         // L'enregistrement du nom de la photo suite à l'upload
         $pixName = $_FILES['picture']['name'];
 
+        if ($_SESSION['connected'] == true) {
 
             $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, :id)');
             $stmt->execute([
@@ -35,15 +43,37 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
                 ':Name' => $pixName
             ]);
 
+        }
+
+        else{
+            $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, NULL)');
+            $stmt->execute([
+
+                ':Name' => $pixName
+            ]);
+        }
+
         header('Location: ./Connecter.php');
     }
     else {
         echo 'Erreur de format';
     }
 }?>
+<?php
+var_dump($_SESSION);
+if(empty($_SESSION['id'])) {
+    echo '<a href="Connection.php">log</a>
+          <a href="inscription.php">register</a>';
+}
+else{
+    echo '<a href="Profil.php">profil</a>';
+}
+?>
 <form action="" method="post" enctype="multipart/form-data">
     <input type="file" name="picture" accept="image/*" id="">
     <button type="submit">
         Upload
     </button>
 </form>
+
+<button><a href="Deconexion.php">Deconnexion</a></button>
