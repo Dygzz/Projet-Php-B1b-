@@ -11,7 +11,7 @@ $stmt->execute();
 $lastPicture = $stmt->fetchall();
 
 for ($i = 0; $i < count($lastPicture); $i ++) {
-    print_r($lastPicture[$i][0]) ;
+
 
    echo '<img src="Images/' .$lastPicture[$i][0] .'">';
 }
@@ -39,12 +39,13 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
         // L'enregistrement du nom de la photo suite à l'upload
         $pixName = $_FILES['picture']['name'];
 
-
         $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, NULL)');
         $stmt->execute([
 
             ':Name' => $pixName
         ]);
+
+        header('Location: ./upload.php');
 
     } else {
         echo 'Erreur de format';

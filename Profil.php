@@ -34,6 +34,7 @@ if (!empty($_POST)){
     $user[0]['Pseudo'] = $_POST['Pseudo'];
     $user[0]['Email'] = $_POST['Email'];
     echo 'information modifiée' ;
+    header('Location: ./Profil.php');
 }
 ?>
 
