@@ -6,8 +6,6 @@ if (!$_SESSION['connected']) {
     header('Location: ./Connection.php');
 }
 
-
-
 $stmt = $dbh->prepare('SELECT *
                        FROM users
                        WHERE id = :id
@@ -35,6 +33,23 @@ if (!empty($_POST)){
     $user[0]['Email'] = $_POST['Email'];
     echo 'information modifiée' ;
     header('Location: ./Profil.php');
+}
+
+$stmt = $dbh->prepare('SELECT Name
+                       FROM pictures p, users u
+                       WHERE p.id_user = u.id
+                       AND :id = u.id 
+                    ');
+$stmt->execute([
+    ':id' => $_SESSION['id']
+]);
+$picture = $stmt->fetchAll();
+
+
+
+for ($i = 0; $i < count($picture); $i ++) {
+
+    echo '<img src="Images/' .$picture[$i][0] .'">';
 }
 ?>
 

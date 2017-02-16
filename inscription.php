@@ -1,12 +1,29 @@
 <?php
 
 require'connect.php';
+
+
+
 if (!empty($_POST)) {
-    
-    
-    $hashed_password = crypt($_POST['password'],'_J9..rasm');
-  
-    
+
+$stmt = $dbh->prepare('SELECT id
+                       FROM users
+                       WHERE Email = :email 
+                      '
+);
+$stmt->execute([
+    ':email' => $_POST['email']
+]);
+$result = $stmt->fetchall();
+
+if (count($result) > 0) {
+    echo 'l\'email existe deja';
+}
+elseif (count($result) == 0) {
+
+    $hashed_password = crypt($_POST['password'], '_J9..rasm');
+
+
     $stmt = $dbh->prepare('
                 INSERT INTO users(pseudo, email, password) 
                 VALUES (:pseudo, :email, :password);');
@@ -15,6 +32,8 @@ if (!empty($_POST)) {
         ':email' => $_POST['email'],
         ':password' => $hashed_password
     ]);
+
+    }
 }
 
 ?>
