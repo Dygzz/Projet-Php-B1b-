@@ -6,34 +6,34 @@ require'connect.php';
 
 if (!empty($_POST)) {
 
-$stmt = $dbh->prepare('SELECT id
+    $stmt = $dbh->prepare('SELECT id
                        FROM users
                        WHERE Email = :email 
                       '
-);
-$stmt->execute([
-    ':email' => $_POST['email']
-]);
-$result = $stmt->fetchall();
+                         );
+    $stmt->execute([
+        ':email' => $_POST['email']
+    ]);
+    $result = $stmt->fetchall();
 
-if (count($result) > 0) {
-    echo 'l\'email existe deja';
-}
-elseif (count($result) == 0) {
+    if (count($result) > 0) {
+        echo 'l\'email existe deja';
+    }
+    elseif (count($result) == 0) {
 
-    $hashed_password = crypt($_POST['password'], '_J9..rasm');
+        $hashed_password = crypt($_POST['password'], '_J9..rasm');
 
 
-    $stmt = $dbh->prepare('
+        $stmt = $dbh->prepare('
                 INSERT INTO users(pseudo, email, password) 
                 VALUES (:pseudo, :email, :password);');
-    $stmt->execute([
-        ':pseudo' => $_POST['name'],
-        ':email' => $_POST['email'],
-        ':password' => $hashed_password
-    ]);
+        $stmt->execute([
+            ':pseudo' => $_POST['name'],
+            ':email' => $_POST['email'],
+            ':password' => $hashed_password
+        ]);
 
-    
+
     }
 }
 
@@ -49,7 +49,8 @@ elseif (count($result) == 0) {
 
     </head>
     <body>
-        <div>
+        <div> 
+            <h4 id="Nom"> Picturama</h4>
             <div id="first">
                 <div class="container">
 
@@ -105,45 +106,43 @@ elseif (count($result) == 0) {
                             <div class="panel-body">
                                 <form role="form" method="post">
                                     <fieldset>
-                                        <div class="row">
-                                            <div class="center-block">
-                                                <img class="profile-img"
-                                                     src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
-                                            </div>
-                                        </div>
+                                        <div id="marg">
 
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+                                            <div class="row">
 
-                                                <div class="form-group">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="glyphicon glyphicon-user"></i>
-                                                        </span> 
-                                                        <input class="form-control" placeholder="name" name="name" type="text" autofocus>
+                                                <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+
+
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="glyphicon glyphicon-user"></i>
+                                                            </span> 
+                                                            <input class="form-control" placeholder="name" name="name" type="text" autofocus>
+                                                        </div>
                                                     </div>
-                                                </div>
 
 
-                                                <div class="form-group">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="glyphicon glyphicon-user"></i>
-                                                        </span> 
-                                                        <input class="form-control" placeholder="Email" name="email" type="text" autofocus>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="glyphicon glyphicon-user"></i>
+                                                            </span> 
+                                                            <input class="form-control" placeholder="Email" name="email" type="text" autofocus>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="glyphicon glyphicon-lock"></i>
-                                                        </span>
-                                                        <input class="form-control" placeholder="Mot de passe" name="password" type="password" value="">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="glyphicon glyphicon-lock"></i>
+                                                            </span>
+                                                            <input class="form-control" placeholder="Mot de passe" name="password" type="password" value="">
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="form-group">
-                                                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Inscription" >
+                                                    <div class="form-group">
+                                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Inscription" >
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,5 +158,7 @@ elseif (count($result) == 0) {
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <div id="cr"> Created by Ingesup Students</div>
+
     </body>
 </html>

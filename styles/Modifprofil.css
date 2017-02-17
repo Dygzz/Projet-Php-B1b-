@@ -28,8 +28,10 @@ body{
     padding: 5px 15px;
     text-align: center;
 }
+
 #marg{
-        margin-top: -61px;
+
+    margin: -10px;
 }
 
 
@@ -50,3 +52,21 @@ a {
     font-size: 20px;
 }
 
+
+#Nom{
+
+    font-size: 39px;
+    color: white;
+    text-decoration: Fantaisy;
+    font-family: cursive;
+    margin-left: 29px;
+
+}
+
+#cr {
+    text-align: right;
+    padding-top: 40px;
+    color: peachpuff;
+    font-size: 29px;
+    margin-right: 67px;
+}

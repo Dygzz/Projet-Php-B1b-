@@ -38,6 +38,12 @@ body{
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+
+}
+
+#marg{
+
+    margin: -10px;
 }
 
 a {
@@ -56,4 +62,22 @@ a:hover
     font-size: 22px;
     text-align: center;
     color: white;
+}
+
+#Nom{
+
+    font-size: 39px;
+    color: white;
+    text-decoration: Fantaisy;
+    font-family: cursive;
+    margin-left: 29px;
+
+}
+
+#cr {
+    text-align: right;
+    padding-top: 15px;
+    color: peachpuff;
+    font-size: 29px;
+    margin-right: 67px;
 }
