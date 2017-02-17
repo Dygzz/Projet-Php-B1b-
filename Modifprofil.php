@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+    <?php 
+
+    require'connect.php';
+
+
+   
+    if (!empty($_POST)){
+
+    $hashed_password = crypt($_POST['password'], '_J9..rasm');
+
+    $stmt = $dbh->prepare ('UPDATE users 
+                            SET Pseudo = :name, Email = :email, password = :password
+                            where id = :id');
+    $stmt->execute([
+        ':id' => $_SESSION['id'],
+        ':email' =>$_POST['Email'],
+        ':name' =>$_POST['Pseudo'],
+        ':password' => $hashed_password
+    ]);
+    $stmt->fetchAll();
+    echo 'information modifiée' ;
+    header('Location: ./Profil.php');
+}
+    ?>
+        
+        <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -72,7 +97,7 @@
                                                         <span class="input-group-addon">
                                                             <i class="glyphicon glyphicon-user"></i>
                                                         </span> 
-                                                        <input class="form-control" placeholder="name" name="name" type="text" autofocus>
+                                                        <input class="form-control" placeholder="name" name="Pseudo" type="text" autofocus>
                                                     </div>
                                                 </div>
 
@@ -82,7 +107,7 @@
                                                         <span class="input-group-addon">
                                                             <i class="glyphicon glyphicon-user"></i>
                                                         </span> 
-                                                        <input class="form-control" placeholder="Email" name="email" type="text" autofocus>
+                                                        <input class="form-control" placeholder="Email" name="Email" type="text" autofocus>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -113,3 +138,5 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
 </html>
+
+        
