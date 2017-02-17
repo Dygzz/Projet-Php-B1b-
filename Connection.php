@@ -1,5 +1,5 @@
 <?php
-session_start();
+//
 require 'connect.php';
 
 
@@ -17,9 +17,12 @@ if(!empty($_POST['password']) && !empty($_POST['email'])){
     ]);
     $result = $stmt->fetchall();
 
+
+
+
     if (count($result) > 0) {
         $_SESSION['connected'] = true;
-        $_SESSION['id']= $result['id'];
+        $_SESSION['id']= $result[0]['id'];
         header('Location: ./Connecter.php');
     }
     elseif (count($result) == 0) {
