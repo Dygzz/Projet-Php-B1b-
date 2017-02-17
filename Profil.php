@@ -20,13 +20,17 @@ echo 'L\'email est : ' . htmlentities($user[0]['Email']) . '<br>';
 
 
 if (!empty($_POST)){
+
+    $hashed_password = crypt($_POST['password'], '_J9..rasm');
+
     $stmt = $dbh->prepare ('UPDATE users 
-                            SET Pseudo = :name, Email = :email
+                            SET Pseudo = :name, Email = :email, password = :password
                             where id = :id');
     $stmt->execute([
         ':id' => $user[0]['id'],
         ':email' =>$_POST['Email'],
-        ':name' =>$_POST['Pseudo']
+        ':name' =>$_POST['Pseudo'],
+        ':password' => $hashed_password
     ]);
     $stmt->fetchAll();
     $user[0]['Pseudo'] = $_POST['Pseudo'];
@@ -71,6 +75,8 @@ for ($i = 0; $i < count($picture); $i ++) {
     <input type="text" name="Email" value="<?= htmlentities($user[0]['Email']) ?>">
 
     <br>
+    <label for="Email">Modifier le password</label>
+    <input type="text" name="password" >
     <button type="submit" >Valider</button>
 </form>
 </body>

@@ -37,19 +37,20 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
 
         if ($_SESSION['connected'] == true) {
 
-            $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, :id)');
+            $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, :date, :id)');
             $stmt->execute([
                 ':id' => $_SESSION['id'],
-                ':Name' => $pixName
+                ':Name' => $pixName,
+                ':date' => date('d/m/Y')
             ]);
 
         }
 
         else{
-            $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, NULL)');
+            $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, :date, NULL)');
             $stmt->execute([
-
-                ':Name' => $pixName
+                ':Name' => $pixName,
+                ':date' => date('d/m/Y')
             ]);
         }
 
