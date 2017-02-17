@@ -49,11 +49,13 @@ elseif (count($result) == 0) {
     </head>
     <body>
         <form action="" method="post">
+            <label for="name">Pseudo</label>
             <input type="text" name="name" id="">
+            <label for="email">Email</label>
             <input type="text" name="email" id="">
+            <label for="password">Mot de Passe</label>
             <input type="text" name="password" id="">
-            <button type="submit">Enregistrer</button>
-            
+            <button type="submit">Inscription</button>
         </form>
     </body>
 </html>
