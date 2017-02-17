@@ -1,11 +1,47 @@
 body{
-    background-color: #C6EBF4;
+    background-image: url('../ImagesHtml/paysage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
-#Titre{
-    
+#date_heure {
+    padding-left: 992px;
+    font-size: 20px;
+    color: sandybrown;
+}
+
+#up {
+    width: 200px;
+    height: 200px;
+    margin-top: 7px;
+}
+
+#titre {
+    color: brown;
     text-align: center;
-    font-family: sans-serif;
-    font-size: 28px;
+    font-size: 36px;
+    font-family: cursive;
+    margin-top: -110px;
 }
 
+
+
+#second {
+    height: 420px;
+    width: 444px;
+    background-color: rgba(158, 220, 20, 0.65);
+    margin-left: 545px;
+    text-align: center;
+}
+
+#Tit{
+    color: darkslategray
+}
+
+a{
+
+    text-decoration: none;
+    color: red;
+}

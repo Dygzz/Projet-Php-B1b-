@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" href="./styles/inscription.css"> 
+        <script language="javascript">
+            function date_heure(id)
+            {
+                date = new Date;
+                annee = date.getFullYear();
+                moi = date.getMonth();
+                mois = new Array('janvier', 'f&eacute;vrier', 'mars', 'avril', 'mai', 'juin', 'juillet', 'Ao&ucirc;t', 'septembre', 'octobre', 'novembre', 'D&eacute;cembre');
+                j = date.getDate();
+                jour = date.getDay();
+                jours = new Array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
+                h = date.getHours();
+                if(h<10)
+                {
+                    h = "0"+h;
+                }
+                m = date.getMinutes();
+                if(m<10)
+                {
+                    m = "0"+m;
+                }
+                s = date.getSeconds();
+                if(s<10)
+                {
+                    s = "0"+s;
+                }
+                resultat = 'Nous sommes le '+jours[jour]+' '+j+' '+mois[moi]+' '+annee+' et il est '+h+':'+m+':'+s;
+                document.getElementById(id).innerHTML = resultat;
+                setTimeout('date_heure("'+id+'");','1000');
+                return true; 
+            }
+        </script>
+    </head>
+
+
+
+    <body>
+
+        <div id="first">
+
+            <span id="date_heure"></span>
+
+            <script type="text/javascript" >window.onload = date_heure('date_heure');</script>
+
+            <img src="./ImagesHtml/upload.png" id="up">
+
+            <h1 id="titre"><i>Website For Upload</i></h1>
+
+
+        </div>
+
+        <div id="second">
+
+
+
+            <h2 id="Tit" > Inscrivez-vous ! </h2>
+
+            <td>
+                <br>
+                <br>
+                Entrez votre pseudo :
+                <br>
+                <input type="text" name="name" id="" placeholder="pseudo" > 
+                <br>
+                <br>
+                Entrez votre email :
+                <br>
+                <input type="text" name="email" id="" placeholder="email"> 
+                <br>
+                <br>
+                Entrez votre mot de passe :
+                <br>
+                <input type="text" name="password" id="" placeholder="mot de passe">
+                <br> 
+                <br>
+                <button type="submit">Inscription</button> 
+                <br>
+                <br>
+                <h3>Si vous avez déjà un compte : <a href="./Connection.php" >cliquez-ici</a></h3>
+            </td>
+
+        </div>
+
+
+
+    </body>
+</html>

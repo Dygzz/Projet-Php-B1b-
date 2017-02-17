@@ -18,9 +18,8 @@ if (!empty($_POST)) {
 }
 
 ?>
-
 <!doctype html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -56,48 +55,62 @@ if (!empty($_POST)) {
                 resultat = 'Nous sommes le '+jours[jour]+' '+j+' '+mois[moi]+' '+annee+' et il est '+h+':'+m+':'+s;
                 document.getElementById(id).innerHTML = resultat;
                 setTimeout('date_heure("'+id+'");','1000');
-                return true;
+                return true; 
             }
         </script>
 
     </head>
-    <body>
-        <body bgcolor="#C6EBF4">
-            <center>
 
-            </center>
-            <table border="1" align="center" height="100%"; width="100%" cellpadding="40%" cellspacing="0">
-                <tr height="120" align="center">
+
+
+
+    <body>
+
+        <center> </center>
+
+
+
+
+
+        <div id="all">        
+
+            <table border="1" align="center" height="100%"; width="50%" cellpadding="27%" cellspacing="0" >
+
+                <tr>
                     <td>
                         <table>
-                            <tr>
+                            <tr >
                                 <td><img src="./ImagesHtml/upload.png" width="100"></td>
                                 <td>
-                                    <FONT size="12"><i> Site For Upload </i></FONT>
+                                    <FONT size="12"><i> Website For Upload </i></FONT>
                                 </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
-                <center><span id="date_heure"></span></center>
-                <script type="text/javascript">window.onload = date_heure('date_heure');</script>
 
+
+                <center><span id="date_heure"></span></center>
+
+                <script type="text/javascript" >window.onload = date_heure('date_heure');</script>
 
 
                 <tr height="100%">
                     <td>
-                        <form action="index.php" method="POST">
+                        <form action="index.php" method="POST" >
 
-                            <table border="1" align="center" height="100%"; width="300" cellpadding="0" cellspacing="0">
-                                <tr align="center">
-                                    <h2 id="Titre"> Inscrivez-vous !</h2>
+                            <table border="1" align="center" height="100%"; width="300" cellpadding="0" cellspacing="0" >
+
+
+                                <tr align="center" >
+                                    <h2 id="Titre" > Inscrivez-vous ! </h2>
 
                                     <td>
                                         <br>
                                         <br>
-                                        Entrez votre nom :
+                                        Entrez votre pseudo :
                                         <br>
-                                        <input type="text" name="name" id="" placeholder="nom"> 
+                                        <input type="text" name="name" id="" placeholder="pseudo" > 
                                         <br>
                                         <br>
 
@@ -106,25 +119,30 @@ if (!empty($_POST)) {
                                         <input type="text" name="email" id="" placeholder="email"> 
                                         <br>
                                         <br>
-                                        Entrez votre password :
-                                        <input type="text" name="password" id="" placeholder="password">
+                                        Entrez votre mot de passe :
+                                        <input type="text" name="password" id="" placeholder="mot de passe">
                                         <br> 
                                         <br>
                                         <button type="submit">Inscription</button> 
                                         <br>
                                         <br>
                                         <br>
+                                        <h3>Si vous avez déjà un compte : <a href="./" >cliquez-ici</a></h3>
                                     </td>
                                 </tr>
                             </table>
+
+
                         </form>
 
-                        <tr height="50" align="center">
+                        <tr id="fin">
                             <td>Ingésup Students</td>
                         </tr>
             </table>
+                </div>
 
-                </body>
+            </body>
 
-            </html>
+        </html>
+
 
