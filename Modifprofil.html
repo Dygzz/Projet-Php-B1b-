@@ -1,0 +1,36 @@
+    require'connect.php';
+   
+    if (!empty($_POST)){
+
+    $hashed_password = crypt($_POST['password'], '_J9..rasm');
+
+    $stmt = $dbh->prepare ('UPDATE users 
+                            SET Pseudo = :name, Email = :email, password = :password
+                            where id = :id');
+    $stmt->execute([
+        ':id' => $user[0]['id'],
+        ':email' =>$_POST['Email'],
+        ':name' =>$_POST['Pseudo'],
+        ':password' => $hashed_password
+    ]);
+    $stmt->fetchAll();
+    $user[0]['Pseudo'] = $_POST['Pseudo'];
+    $user[0]['Email'] = $_POST['Email'];
+    echo 'information modifiée' ;
+    header('Location: ./Profil.php');
+}
+
+
+
+
+<form action="" method="post">
+    <label for="Nom"> Modifier le Pseudo :</label>
+    <input type="text" name="Pseudo" >
+    <br>
+    <label for="Email"> Modifier L'Email:</label>
+    <input type="text" name="Email">
+    <br>
+    <label for="Email">Modifier le password</label>
+    <input type="text" name="password" >
+    <button type="submit" >Valider</button>
+</form>
