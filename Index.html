@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/styles1.css" />
+
+    </head>
+    <body>
+        <div>
+            <div id="first">
+                <div class="container">
+                    <div class="col-md-4" align="left">
+                        <a >
+                            <img src="ImagesHtml/upload.png" class="logo" class="img-responsive">
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-4" align="center">
+                        <script language="javascript">
+                            function date_heure(id)
+                            {
+                                date = new Date;
+                                annee = date.getFullYear();
+                                moi = date.getMonth();
+                                mois = new Array('janvier', 'f&eacute;vrier', 'mars', 'avril', 'mai', 'juin', 'juillet', 'Ao&ucirc;t', 'septembre', 'octobre', 'novembre', 'D&eacute;cembre');
+                                j = date.getDate();
+                                jour = date.getDay();
+                                jours = new Array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
+                                h = date.getHours();
+                                if(h<10)
+                                {
+                                    h = "0"+h;
+                                }
+                                m = date.getMinutes();
+                                if(m<10)
+                                {
+                                    m = "0"+m;
+                                }
+                                s = date.getSeconds();
+                                if(s<10)
+                                {
+                                    s = "0"+s;
+                                }
+                                resultat = 'Nous sommes le '+jours[jour]+' '+j+' '+mois[moi]+' '+annee+' et il est '+h+':'+m+':'+s;
+                                document.getElementById(id).innerHTML = resultat;
+                                setTimeout('date_heure("'+id+'");','1000');
+                                return true;
+                            }
+                        </script>
+                        <center><span id="date_heure"></span></center>
+                        <script type="text/javascript">window.onload = date_heure('date_heure');</script>
+
+                    </div>
+                    <div class="col-md-4" align="right" >
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-user"></span> 
+                                <strong>Compte</strong>
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="navbar-login">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <p class="text-center">
+                                                    <span class="glyphicon glyphicon-user icon-size"></span>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <p class="text-left"><strong>Prénom Nom</strong></p>
+                                                <p class="text-left small">Email</p>
+                                                <p class="text-left">
+                                                    <a href="#" class="btn btn-primary btn-block btn-sm">Modification</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="navbar-login navbar-login-session">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p>
+                                                    <a href="#" class="btn btn-danger btn-block">Deconnexion</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </div>
+                </div>
+            </div>
+            <div id="second">
+
+                <div class="container" >
+                    <div class="col-md-4 box">
+                        <img src="http://placehold.it/320x215" class="img-responsive">
+                    </div>
+
+                    <div class="col-md-4 box">
+                        <img src="http://placehold.it/320x215" class="img-responsive">
+                    </div>
+
+                    <div class="col-md-4 box">
+                        <img src="http://placehold.it/320x215" class="img-responsive">
+                    </div>
+
+                    <div class="clearfix"></div><br>
+
+                    <div class="replace">
+
+                        <div class="col-md-4 box">
+                            <img src="http://placehold.it/320x215" class="img-responsive">
+                        </div>
+
+                        <div class="col-md-4 box">
+                            <img src="http://placehold.it/320x215" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="third">
+                <div class="container">
+                    <div class="row">
+                        <div class="pulse-btn" >
+                            <a href="#" class="btn btn-primary" >Upload</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed --><!- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>

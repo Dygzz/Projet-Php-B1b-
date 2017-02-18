@@ -1,8 +1,8 @@
 body{
-    background-image: url(../ImagesHtml/testimg.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin:0;
+    padding:0;
+    background: url(../ImagesHtml/testimg.jpg) no-repeat center center fixed; 
+    background-size: cover; 
 }
 
 .logo{
@@ -16,12 +16,12 @@ body{
     font-family: arial black;
     color: black;
     max-width: 100px;
-    
+
 }
 #second{
- padding-top:10%;
+    padding-top:10%;
     margin-top: 40px;
-    
+
 }
 .panel-heading {
     padding: 5px 15px;
@@ -30,11 +30,11 @@ body{
 
 
 .profile-img {
-	width: 96px;
-	height: 96px;
-	margin: 0 auto 10px;
-	display: block;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
