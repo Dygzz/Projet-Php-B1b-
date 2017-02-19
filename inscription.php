@@ -23,7 +23,7 @@ require'connect.php';
 
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4" align="center">
+                <div class="col-md-4 col-sm-4 col-xs-4 heure" align="center">
                     <script language="javascript">
                         function date_heure(id)
                         {
@@ -90,6 +90,7 @@ require'connect.php';
                                 ':password' => $hashed_password
                             ]);
                         }
+                        header('Location: Connection.php');
                     }
                     ?>
                     <div class="row">
@@ -113,7 +114,7 @@ require'connect.php';
                                                                 <span class="input-group-addon">
                                                                     <i class="glyphicon glyphicon-user"></i>
                                                                 </span> 
-                                                                <input class="form-control" placeholder="name" name="name" type="text" autofocus>
+                                                                <input class="form-control" placeholder="Pseudo" name="name" type="text" autofocus>
                                                             </div>
                                                         </div>
 

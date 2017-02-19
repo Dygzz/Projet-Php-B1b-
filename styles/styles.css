@@ -1,0 +1,68 @@
+body{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../ImagesHtml/bois.jpg);
+}
+
+.logo{
+    width: 90px;
+    height: 90px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+#date_heure{
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: arial black;
+    color: black;
+    max-width: 100px;
+}
+
+.heure {
+    margin-top: 20px;
+}
+
+#second{
+ padding-top:10%;
+    margin-top: 40px;
+    
+}
+
+.error{
+    background-color:rgb(222, 226, 230);
+    width: 150px;
+    margin:auto ;
+    border-radius: 5%;
+}
+.error p {
+    color:black;
+    text-align: center;
+}
+
+.panel-heading {
+    padding: 5px 15px;
+    text-align: center;
+}
+
+
+.profile-img {
+	width: 96px;
+	height: 96px;
+	margin: 0 auto 10px;
+	display: block;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+#end {
+    font-size: 22px;
+    text-align: center;
+    color: white;
+}
+#end a:hover
+{
+    text-decoration: none;
+    color: darkblue;
+}
