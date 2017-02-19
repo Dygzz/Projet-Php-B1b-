@@ -71,7 +71,7 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
     <div id="first">
         <div class="container">
             <div class="col-md-4 col-sm-4 col-xs-4" align="left">
-                <a >
+                <a href="Connecter.php">
                     <img src="ImagesHtml/upload.png" class="logo" class="img-responsive">
                 </a>
 
@@ -146,6 +146,7 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
                                         <p class="text-left small">Email: <?= htmlentities($user[0]['Email']) ?></p>
                                         <p class="text-left">
                                             <a href="Modifprofil.php" class="btn btn-primary btn-block btn-sm">Modification</a>
+                                            <a href="Profil.php" class="btn btn-primary btn-block btn-sm">Profil</a>
                                         </p>
                                     </div>
                                 </div>
