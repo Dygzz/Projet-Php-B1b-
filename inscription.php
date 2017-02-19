@@ -2,8 +2,6 @@
 
 require'connect.php';
 
-
-
 if (!empty($_POST)) {
 
 $stmt = $dbh->prepare('SELECT id
@@ -32,6 +30,8 @@ elseif (count($result) == 0) {
         ':email' => $_POST['email'],
         ':password' => $hashed_password
     ]);
+
+    header('Location: ./Connection.php');
 
     }
 }

@@ -19,24 +19,39 @@ echo 'Le pseudo est : ' . htmlentities($user[0]['Pseudo']) . '<br>';
 echo 'L\'email est : ' . htmlentities($user[0]['Email']) . '<br>';
 
 
-if (!empty($_POST)){
+if (!empty($_POST)) {
 
-    $hashed_password = crypt($_POST['password'], '_J9..rasm');
+    $stmt = $dbh->prepare('SELECT id
+                       FROM users
+                       WHERE Email = :email 
+                      '
+    );
+    $stmt->execute([
+        ':email' => $_POST['Email']
+    ]);
+    $result = $stmt->fetchall();
 
-    $stmt = $dbh->prepare ('UPDATE users 
+    if (count($result) > 0) {
+        echo 'l\'email existe deja';
+    } elseif (count($result) == 0) {
+
+        $hashed_password = crypt($_POST['password'], '_J9..rasm');
+
+        $stmt = $dbh->prepare('UPDATE users 
                             SET Pseudo = :name, Email = :email, password = :password
                             where id = :id');
-    $stmt->execute([
-        ':id' => $user[0]['id'],
-        ':email' =>$_POST['Email'],
-        ':name' =>$_POST['Pseudo'],
-        ':password' => $hashed_password
-    ]);
-    $stmt->fetchAll();
-    $user[0]['Pseudo'] = $_POST['Pseudo'];
-    $user[0]['Email'] = $_POST['Email'];
-    echo 'information modifiée' ;
-    header('Location: ./Profil.php');
+        $stmt->execute([
+            ':id' => $user[0]['id'],
+            ':email' => $_POST['Email'],
+            ':name' => $_POST['Pseudo'],
+            ':password' => $hashed_password
+        ]);
+        $stmt->fetchAll();
+        $user[0]['Pseudo'] = $_POST['Pseudo'];
+        $user[0]['Email'] = $_POST['Email'];
+        echo 'information modifiée';
+        header('Location: ./Profil.php');
+    }
 }
 
 $stmt = $dbh->prepare('SELECT Name
