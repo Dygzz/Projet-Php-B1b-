@@ -1,5 +1,4 @@
 body{
-    background-image: url('../ImagesHtml/bois.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,12 +10,11 @@ body{
     margin-left: 60px;
     margin-top: 10px;
 }
-#date_heure {
-    font-size: 22px; 
+#date_heure{
+    font-size: 18px;
+    font-family: arial black;
+    color: black;
     max-width: 100px;
-    margin-left: 611px;
-    color: white;
-    font-family: sansita;
 }
 
 #second{
@@ -74,10 +72,14 @@ a:hover
 
 }
 
-#cr {
-    text-align: right;
-    padding-top: 15px;
-    color: peachpuff;
-    font-size: 29px;
-    margin-right: 67px;
+
+.error{
+    background-color:rgb(222, 226, 230);
+    width: 150px;
+    margin:auto ;
+    border-radius: 5%;
+}
+.error p {
+    color:black;
+    text-align: center;
 }

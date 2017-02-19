@@ -1,8 +1,9 @@
 body{
-    background-image: url('../ImagesHtml/bois.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    margin:0;
+    padding:0;
+    background: url(../ImagesHtml/test2.jpg) no-repeat center center fixed;
     background-size: cover;
+    background-color: antiquewhite;
 }
 
 .logo{
@@ -12,12 +13,40 @@ body{
     margin-top: 10px;
 }
 
-#date_heure {
-    font-size: 22px; 
+
+#date_heure{
+    font-size: 18px;
+    font-family: arial black;
+    color: black;
     max-width: 100px;
-    margin-left: 611px;
-    color: white;
-    font-family: sansita;
+}
+
+.dropdown a {
+    color: #337ab7;
+}
+.box :hover{
+    border:2px #036 solid;
+    padding:2px 2px 2px;
+    box-shadow:2px 2px 10px;
+    background:red;
+}
+.navbar-login
+{
+    width: 150px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: inherit;
 }
 #second{
     padding-top:10%;
@@ -63,10 +92,13 @@ a {
 
 }
 
-#cr {
-    text-align: right;
-    padding-top: 40px;
-    color: peachpuff;
-    font-size: 29px;
-    margin-right: 67px;
+.error{
+    background-color:rgb(222, 226, 230);
+    width: 150px;
+    margin:auto ;
+    border-radius: 5%;
+}
+.error p {
+    color:black;
+    text-align: center;
 }
