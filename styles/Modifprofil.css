@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    background: url(../ImagesHtml/test2.jpg) no-repeat center center fixed;
+    background-image: url(../ImagesHtml/bois.jpg);
     background-size: cover;
     background-color: antiquewhite;
 }
@@ -21,9 +21,10 @@ body{
     max-width: 100px;
 }
 
-.dropdown a {
-    color: #337ab7;
+.heure {
+    margin-top: 20px;
 }
+
 .box :hover{
     border:2px #036 solid;
     padding:2px 2px 2px;
@@ -42,6 +43,19 @@ body{
     padding: 10px;
     padding-bottom: 0px;
     padding-top: 0px;
+}
+
+.dropdown a{
+    color:white;
+}
+
+.dropdown a:hover{
+    text-decoration: none;
+    color: aqua;
+}
+
+.dropdown a:focus{
+    text-decoration: none;
 }
 
 .dropdown-menu {
@@ -102,3 +116,4 @@ a {
     color:black;
     text-align: center;
 }
+

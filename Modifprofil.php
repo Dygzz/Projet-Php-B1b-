@@ -1,6 +1,11 @@
 <?php 
 require'connect.php';
 
+if (!$_SESSION['connected']) {
+    header('Location: ./Connection.php');
+}
+
+
 $stmt = $dbh->prepare('SELECT *
                        FROM users
                        WHERE id = :id
@@ -31,7 +36,7 @@ $user = $stmt->fetchAll();
 
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4" align="center">
+                <div class="col-md-4 col-sm-4 col-xs-4 heure" align="center">
                     <script language="javascript">
                         function date_heure(id)
                         {
@@ -81,9 +86,10 @@ $user = $stmt->fetchAll();
                                     <div class="row">
                                         <div class="col-lg-8">
                                             <p class="text-left"><strong>Pseudo: </strong><?= htmlentities($user[0]['Pseudo']) ?></p>
-                                            <p class="text-left small">Email: <?= htmlentities($user[0]['Email']) ?></p>
+                                            <p class="text-left small"><strong>Email: </strong><?= htmlentities($user[0]['Email']) ?></p>
                                             <p class="text-left">
                                                 <a href="Modifprofil.php" class="btn btn-primary btn-block btn-sm">Modification</a>
+                                                <a href="Profil.php" class="btn btn-primary btn-block btn-sm">Profil</a>
                                             </p>
                                         </div>
                                     </div>
@@ -108,34 +114,34 @@ $user = $stmt->fetchAll();
             <div id="second" class="container">
                 <?php
     if (!empty($_POST)) {
-        $stmt = $dbh->prepare('SELECT id
-                  FROM users
-                  WHERE Email = :email
-                  '
-                             );
-        $stmt->execute([
-            ':email' => $_POST['Email']
-        ]);
-        $result = $stmt->fetchall();
-        if (count($result) > 0) {
-            echo '<div class="error">
-                      <p> L\'Email existe déjà !!!</p>
-                  </div>';
-        }
-        elseif (count($result) == 0) {
-            $hashed_password = crypt($_POST['password'], '_J9..rasm');
-            $stmt = $dbh->prepare ('UPDATE users 
+
+                if (empty($_POST['password'])){
+                $stmt = $dbh->prepare ('UPDATE users 
+                            SET Pseudo = :name, Email = :email
+                            where id = :id');
+                $stmt->execute([
+                    ':id' => $_SESSION['id'],
+                    ':email' =>$_POST['Email'],
+                    ':name' =>$_POST['Pseudo'],
+                ]);
+                $stmt->fetchAll();
+            }
+            else {
+                $hashed_password = crypt($_POST['password'], '_J9..rasm');
+                $stmt = $dbh->prepare('UPDATE users 
                             SET Pseudo = :name, Email = :email, password = :password
                             where id = :id');
-            $stmt->execute([
-                ':id' => $_SESSION['id'],
-                ':email' =>$_POST['Email'],
-                ':name' =>$_POST['Pseudo'],
-                ':password' => $hashed_password
-            ]);
-            $stmt->fetchAll();
-            header('Location: ./Profil.php');
-        }
+                $stmt->execute([
+                    ':id' => $_SESSION['id'],
+                    ':email' => $_POST['Email'],
+                    ':name' => $_POST['Pseudo'],
+                    ':password' => $hashed_password
+                ]);
+                $stmt->fetchAll();
+            }
+        echo '<div class="error">
+                      <p> Information Modifier</p>
+                  </div>';
     }
                 ?>
                 <div class="row">
@@ -156,7 +162,7 @@ $user = $stmt->fetchAll();
                                                         <span class="input-group-addon">
                                                             <i class="glyphicon glyphicon-user"></i>
                                                         </span> 
-                                                        <input class="form-control" placeholder="name" name="Pseudo" type="text" autofocus>
+                                                        <input class="form-control" placeholder="Pseudo" name="Pseudo" value="<?= htmlentities($user[0]['Pseudo'])?> " type="text">
                                                     </div>
                                                 </div>
 
@@ -166,7 +172,7 @@ $user = $stmt->fetchAll();
                                                         <span class="input-group-addon">
                                                             <i class="glyphicon glyphicon-user"></i>
                                                         </span> 
-                                                        <input class="form-control" placeholder="Email" name="Email" type="email" autofocus>
+                                                        <input class="form-control" placeholder="Email" name="Email" value="<?= htmlentities($user[0]['Email']) ?>" type="email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

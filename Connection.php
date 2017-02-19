@@ -23,7 +23,7 @@ require 'connect.php';
 
         </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-4" align="center">
+        <div class="col-md-4 col-sm-4 col-xs-4 heure" align="center">
             <script language="javascript">
                 function date_heure(id)
                 {
@@ -134,7 +134,7 @@ require 'connect.php';
                 </div>
             </div>
         </div>
-        <h3 id="end">Si vous possedez un compte : <a href="./Connection.php" ><strong>Cliquez-ici</strong></a></h3>
+        <h3 id="end">Si vous ne possedez pas de compte : <a href="./inscription.php" ><strong>Cliquez-ici</strong></a></h3>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

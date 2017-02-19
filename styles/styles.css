@@ -2,6 +2,7 @@ body{
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url(../ImagesHtml/bois.jpg);
 }
 
 .logo{
@@ -11,10 +12,15 @@ body{
     margin-top: 10px;
 }
 #date_heure{
+    margin-top: 20px;
     font-size: 18px;
     font-family: arial black;
     color: black;
     max-width: 100px;
+}
+
+.heure {
+    margin-top: 20px;
 }
 
 #second{

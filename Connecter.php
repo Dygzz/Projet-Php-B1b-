@@ -2,6 +2,17 @@
 
 require 'connect.php';
 
+function suppr_accents($str, $encoding='utf-8')
+{
+
+    $str = htmlentities($str, ENT_NOQUOTES, $encoding);
+    $str = preg_replace('#&([A-za-z])(?:acute|grave|cedil|circ|orn|ring|slash|th|tilde|uml);#', '\1', $str);
+    $str = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $str);
+    $str = preg_replace('#&[^;]+;#', '', $str);
+
+    return $str;
+}
+
 if (!empty($_SESSION['id'])) {
     $stmt = $dbh->prepare('SELECT *
                        FROM users
@@ -28,7 +39,7 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
 
     // test le mime & l'extension avec pathinfo() -- On ne veut que des fichiers PNG
     if(in_array($extension, $extension_valid) && in_array($mime, $mime_valid)){
-        move_uploaded_file($_FILES['picture']['tmp_name'], 'Images/' . $_FILES['picture']['name']);
+        move_uploaded_file($_FILES['picture']['tmp_name'], 'Images/' . suppr_accents($_FILES['picture']['name']));
 
         // L'enregistrement du nom de la photo suite à l'upload
         $pixName = $_FILES['picture']['name'];
@@ -38,7 +49,7 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
             $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, :date, :id)');
             $stmt->execute([
                 ':id' => $_SESSION['id'],
-                ':Name' => $pixName,
+                ':Name' => suppr_accents($pixName),
                 ':date' => date('d/m/Y')
             ]);
 
@@ -47,7 +58,7 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
         else{
             $stmt = $dbh->prepare('INSERT INTO pictures VALUES(NULL, :Name, :date, NULL)');
             $stmt->execute([
-                ':Name' => $pixName,
+                ':Name' => suppr_accents($pixName),
                 ':date' => date('d/m/Y')
             ]);
         }
@@ -77,7 +88,7 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
 
         </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-4" align="center">
+        <div class="col-md-4 col-sm-4 col-xs-4 heure" align="center">
             <script language="javascript">
                 function date_heure(id)
                 {
@@ -177,7 +188,7 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
     <hr>
 
     <?php
-    $stmt = $dbh->prepare('SELECT NAME 
+    $stmt = $dbh->prepare('SELECT NAME, date 
                        FROM pictures
                        ORDER  by id DESC LIMIT 0, 5  
                        '
@@ -186,12 +197,15 @@ if (!empty($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
     $lastPicture = $stmt->fetchall();
 
     for ($i = 0; $i < count($lastPicture); $i ++) {
-
         echo'
 
         <div class="col-md-3  col-md-offset-1 image">
+        <a href="Images/' .$lastPicture[$i][0] .'">
             <img src="Images/' .$lastPicture[$i][0] .'" class="img-responsive">
+            </a>
+            <p>Posté le : '.$lastPicture[$i]['date'].' </p>
         </div>';
+        $_SESSION['picture'] = $lastPicture[$i][0];
     }
     ?>
 

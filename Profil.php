@@ -29,13 +29,13 @@ $user = $stmt->fetchAll();
 <div id="first">
     <div class="container">
         <div class="col-md-4 col-sm-4 col-xs-4" align="left">
-            <a >
+            <a href="Connecter.php">
                 <img src="ImagesHtml/upload.png" class="logo" class="img-responsive">
             </a>
 
         </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-4" align="center">
+        <div class="col-md-4 col-sm-4 col-xs-4 heure" align="center">
             <script language="javascript">
                 function date_heure(id)
                 {
@@ -117,7 +117,7 @@ $user = $stmt->fetchAll();
     <hr>
 
     <?php
-    $stmt = $dbh->prepare('SELECT Name
+    $stmt = $dbh->prepare('SELECT Name, date
                        FROM pictures p, users u
                        WHERE p.id_user = u.id
                        AND :id = u.id 
@@ -133,6 +133,7 @@ $user = $stmt->fetchAll();
 
         <div class="col-md-3  col-md-offset-1 image">
            <img src="Images/' .$picture[$i][0] .'">
+            <p>Posté le : '.$picture[$i]['date'].' </p>
         </div>';
     }
     ?>
@@ -144,5 +145,6 @@ $user = $stmt->fetchAll();
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<button><a href="./Modifprofil.php">modifier</a></button>
+<!-- Include all compiled plugins (below), or include individual files as needed --><!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
