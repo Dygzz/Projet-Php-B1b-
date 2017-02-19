@@ -79,4 +79,6 @@ for ($i = 0; $i < count($picture); $i ++) {
     <input type="text" name="password" >
     <button type="submit" >Valider</button>
 </form>
+
+<button><a href="./Modifprofil.php">modifier</a></button>
 </body>

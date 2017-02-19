@@ -1,0 +1,104 @@
+body{
+    margin:0;
+    padding:0;
+    background: url(../ImagesHtml/test2.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-color: antiquewhite;
+}
+
+.logo{
+    width: 90px;
+    height: 90px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+
+#date_heure{
+    font-size: 18px;
+    font-family: arial black;
+    color: black;
+    max-width: 100px;
+}
+
+.dropdown a {
+    color: #337ab7;
+}
+.box :hover{
+    border:2px #036 solid;
+    padding:2px 2px 2px;
+    box-shadow:2px 2px 10px;
+    background:red;
+}
+.navbar-login
+{
+    width: 150px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: inherit;
+}
+#second{
+    padding-top:10%;
+    margin-top: 40px;
+
+}
+.panel-heading {
+    padding: 5px 15px;
+    text-align: center;
+}
+
+#marg{
+
+    margin: -10px;
+}
+
+
+.profile-img {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+a {
+
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+
+#Nom{
+
+    font-size: 39px;
+    color: white;
+    text-decoration: Fantaisy;
+    font-family: cursive;
+    margin-left: 29px;
+
+}
+
+.error{
+    background-color:rgb(222, 226, 230);
+    width: 150px;
+    margin:auto ;
+    border-radius: 5%;
+}
+.error p {
+    color:black;
+    text-align: center;
+}
