@@ -2,15 +2,16 @@
 
 require 'connect.php';
 
-$stmt = $dbh->prepare('SELECT *
+if (!empty($_SESSION['id'])) {
+    $stmt = $dbh->prepare('SELECT *
                        FROM users
                        WHERE id = :id
                     ');
-$stmt->execute([
-    ':id' => $_SESSION['id']
-]);
-$user = $stmt->fetchAll();
-
+    $stmt->execute([
+        ':id' => $_SESSION['id']
+    ]);
+    $user = $stmt->fetchAll();
+}
 
 $pixName = '';
 
